@@ -8,7 +8,7 @@ let elapsedTime = 0;
 let timerInterval = 0;
 
 function startTimer() {
-  startTime = Date.now() - elapsedTime;
+  startTime = Date.now() - elapsedTime; //Date.now() gives you the current time in milliseconds
 
   timerInterval = setInterval(() => {
     elapsedTime = Date.now() - startTime;
@@ -19,7 +19,6 @@ function startTimer() {
   stopButtonEl.disabled = false;
 }
 
-formatTime();
 
 function formatTime(elapsedTime) {
   const milliseconds = Math.floor((elapsedTime % 1000) / 10);
@@ -47,7 +46,7 @@ function stopTimer() {
 function resetTimer() {
   clearInterval(timerInterval);
   elapsedTime = 0;
-  timerEl.textContent = "00:00:00"
+  timerEl.textContent = "00:00:00";
   startButtonEl.disabled = false;
   stopButtonEl.disabled = false;
 }
